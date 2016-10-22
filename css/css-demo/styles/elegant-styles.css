@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica", sans-serif;
 }
 
+.bullets {
+  font-size: 20.em;
+}
+
 /* 
 
 You can select a class (preceded by a period) 

@@ -1,0 +1,21 @@
+section#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #E9E5DC;
+  border-radius: 10px;
+  margin-top: 120px;
+}
+
+.bullets {
+	font-size: .8em;
+}
+
+ul li {
+  color: red;
+}
+
+#resume-title:hover {
+  background-color: red;
+}
