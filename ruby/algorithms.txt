@@ -30,3 +30,21 @@ Exiting the elevator.
 	8. If doors do not open, press the open door button on the console.
 	9. Exit the elevator when the door open.
 
+Opening a lock
+	1. Check door to see if lock is locked or unlocked.
+		a. If locked, proceed to step 2.
+		b. If unlocked, open door and go through the door.
+	2. Determine if you have the key.
+		a. Check pocket for key ring.
+		b. Check keyring for correct key.
+			i. If known proceed to step 3 with correct key.
+			ii. If unknown proceed to step 3 with any key.
+	3. Put key into lock and turn key.
+		a. Determine if door is unlocked by attempting to open door.
+			i. If unlocked, open door and go through the door.
+			ii. If locked, turn the key the other direction.
+				I. If unlocked, open door and go through the door.
+				II. If locked. Check this key off the tried key list, switch to another key and proceed to step 3 until the correct key is used. 
+
+
+
