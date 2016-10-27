@@ -1,3 +1,41 @@
-h1 {
-	color: blue;
+header{
+  margin: 0 auto;
+  background-color: red;
+  width: 80%;
+  border-style: solid; 
+  border-width: 2px;
+  font-family: arial;
+}
+
+.column-1{
+  margin: 0 auto;
+  width: 45%;
+  position: relative;
+  float: left;
+  padding: 10px;
+  border-style: solid; 
+  border-width: 2px;
+}
+
+.column-2{
+  margin: 0 auto;
+  width: 45%;
+  position: relative;
+  float: right;
+  padding: 10px;
+  border-style: solid; 
+  border-width: 2px;
+  
+}
+
+footer{
+  margin: 0 auto;
+  background-color: yellow;
+  width: 80%;
+  clear: both;
+  padding: 10px;
+}
+
+body{
+  background-image: url("https://octodex.github.com/images/inflatocat.png");
 }
