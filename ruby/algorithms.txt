@@ -1,0 +1,50 @@
+Teaching a robot to use an elevator
+
+Calling an elevator
+	1. Determine what floor you wish to go to.
+	2. Determine what floor you are currently on.
+	3. Push to correct call elevator button
+		a. If the destination floor is above you push the up button.
+		b. If the destination floor is below you push the down button.
+	4. Wait for elevator.
+	5. When elevator door opens, enter elevator.
+
+Moving the elevator to the correct floor.
+	1. Wait for doors to close.
+	2. If doors do not close after ten seconds, press the close door button.
+	3. While the doors are closing, if another passenger is trying to enter the elevator
+	determine whether to press the close door or open door button on the console.
+		a. Determine if your mood is currently friendly or hostile.
+		b. If friendly, press the open door button, wait for passenger to enter the elevator and go back to step 1.
+		c. If there are no additional passengers got to step 4.
+		d. If hostile. press the close door button repeatedly until door closes.
+			i. If passenger puts their body inbetween the door before it completely closes, say "sorry" and press the open door button and go back to step 1.
+			ii. If door close before the passenger can put themselves in the door to stop the door from closing proceed to step 4.
+	4. Locate the destination floor number on the console.
+	5. Press the destination floor number on the console.
+		a. If there are additional passengers ask "What floor?" and press their floor number on the console.
+	6. Ride the elevator until the your destination floor.
+
+Exiting the elevator.
+	7. Wait for the elevator to stops on the correct destination floor.
+	8. If doors do not open, press the open door button on the console.
+	9. Exit the elevator when the door open.
+
+Opening a lock
+	1. Check door to see if lock is locked or unlocked.
+		a. If locked, proceed to step 2.
+		b. If unlocked, open door and go through the door.
+	2. Determine if you have the key.
+		a. Check pocket for key ring.
+		b. Check keyring for correct key.
+			i. If known proceed to step 3 with correct key.
+			ii. If unknown proceed to step 3 with any key.
+	3. Put key into lock and turn key.
+		a. Determine if door is unlocked by attempting to open door.
+			i. If unlocked, open door and go through the door.
+			ii. If locked, turn the key the other direction.
+				I. If unlocked, open door and go through the door.
+				II. If locked. Check this key off the tried key list, switch to another key and proceed to step 3 until the correct key is used. 
+
+
+
