@@ -22,9 +22,10 @@ $client_info = {
 	needs_delivery: true,
 }
 
+
 #Initial client info
 def client_info
-	puts "<== Client Details ==>"
+	puts "<== Enter Client Details ==>"
 	puts "Please enter client's name FIRST LAST NAME:"
 	$client_info[:client_name] = gets.chomp
 	puts "Please enter client's age:"
@@ -41,9 +42,13 @@ def client_info
 	end
 end
 
+
+
+
+
 #Print out of information
 def print_info
-	puts "<== Client Info: (please review ==>"
+	puts "<== Client Info: (please review) ==>"
 	puts "[1] Client Name: " + $client_info[:client_name]
 	puts "[2] Client Age: " + $client_info[:age]
 	puts "[3] Client's number of children: " + $client_info[:number_of_children]
@@ -89,6 +94,9 @@ client_info
 print_info
 changes
 print_info
+
+
+
 
 
 
