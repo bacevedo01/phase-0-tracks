@@ -13,7 +13,7 @@
 #I'll need to create a choice of which line to adjust.
 #and update the hash and print out
 
-#hash
+#hash initialization
 $client_info = {
 	client_name: " ",
 	age: 0,
@@ -22,7 +22,8 @@ $client_info = {
 	needs_delivery: true,
 }
 
-#client input
+#Initial client info
+def client_info
 	puts "<== Client Details ==>"
 	puts "Please enter client's name FIRST LAST NAME:"
 	$client_info[:client_name] = gets.chomp
@@ -38,6 +39,7 @@ $client_info = {
 		 $client_info[:needs_delivery] = true
 	else $client_info[:needs_delivery] = false
 	end
+end
 
 #Print out of information
 def print_info
@@ -49,9 +51,8 @@ def print_info
 	puts "[5] Client needs delivery? " + $client_info[:needs_delivery].to_s
 end
 
-print_info	
-
 #Changes
+def changes
 puts "Would you like to change any information? [1/2/3/4/5] or None"
 change = gets.chomp
 if change == "1"
@@ -79,10 +80,18 @@ elsif change == "5"
 	end
 	puts "Updated Client Information"
 else change.downcase == "none"
-	puts "No changes made."
+	puts "No changes needed."
 end
 
+end
 
+client_info
 print_info
+changes
+print_info
+
+
+
+
 
 
