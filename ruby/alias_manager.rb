@@ -17,41 +17,60 @@
 #return the new name.
 
 #define variables
-$first_name = ""
-$last_name = ""
-$alias_first_name = []
-$alias_last_name = []
-$vowels = ["a","e","i","o","u",]
-$consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z",]
-$output_last_name = []
-#user interface
-puts "Spy Alias Generator"
-puts "Please enter your first name:"
-$first_name = gets.chomp.downcase
-puts "Please enter your last name:"
-$last_name = gets.chomp.downcase
+# $first_name = ""
+# $last_name = ""
+# $alias_first_name = []
+# $alias_last_name = []
+# $vowels = ["a","e","i","o","u",]
+# $consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z",]
+# $output_last_name = []
 
-alias_first_name = $last_name.split("")
-$alias_last_name = $first_name.split("")
+	# puts "Please enter your last name:"
+	# $last_name = gets.chomp.downcase
 
+	# alias_first_name = $last_name.split("")
+	# $alias_last_name = $first_name.split("")
+#definitions
+passwords = []
+string =""
+done = "done"
 #swapping
-
-#I HAVE NO IDEA WHAT AN ALIAS METHOD IS. I HAVE FOUND GARBLE THAT I CAN"T UNDERSTAND IN EXAMPLES ON THE WEB.
-#I FEEL OUT OF MY DEPTH AND DEFEATED.
-#I HAVE WORKED ON THIS FOR 15 HOURS AND I AM NO FURTHER THAN I WAS 14.5 HOURS AGO.
-
-#def swap
-#$output_last_name = $alias_first_name.next
-#end
-#debug 
+	def change_vowel (string)
+	  vowels_a = %w[a e i o u]
+	  vowels_A = %w[A E I O U]
 
 
-p $first_name
-p $last_name
-p alias_first_name
-swap
-p alias_first_name
-p output_last_name
+	  stringarray = string.split("")
+
+	 resultarray = stringarray.map do |letter|
+	  if vowels_a.include? letter or vowels_A.include? letter
+	    "X"
+	  else
+	    letter
+	  end
+	end
+	  $string2 = resultarray.join("")
+	end
+
+# #user interface
+
+while string != done
+	puts "Spy Alias Generator"
+	puts "Please enter your name or Type [done] when finished."
+	string = gets.chomp
+	if string == done
+		puts " #{passwords.length} codenames have been made:"
+		puts passwords
+		break
+	else
+	 change_vowel(string)
+	 puts "Your no vowel codename is:"
+	 p $string2
+	 passwords << " Agent #{string} is known as: #{$string2}"
+	end
+end
+
+
 
 
 
