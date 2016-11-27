@@ -5,72 +5,22 @@
 
 #create an input for for first and last names.
 #split each letter into an array and downcase
-#determine if it is an vowel or a consonant.
-#create arrays of vowels and consonants
-#determine the index of the vowel in the array and return the next index value
-#determine the index of the consonant in the array and return the next index value.
-#loop through all the letters of the first name 
-#loop through all the letters of the last name
+
+#create a hash with the actual alphabet as the key and the changed alphabet as the value.
+#loop through all the letters of the first name, using the letters as the key return value of the 
+#letter
+#loop through all the letters of the last name and do the same
 #put those values in the new last name and new first accordingly.
 #Upcase the first index of each name.
-#join the array into one value.
+#join both first and last name into one value.
 #return the new name.
 
-#define variables
-# $first_name = ""
-# $last_name = ""
-# $alias_first_name = []
-# $alias_last_name = []
-# $vowels = ["a","e","i","o","u",]
-# $consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z",]
-# $output_last_name = []
+#hash alphabet key
 
-	# puts "Please enter your last name:"
-	# $last_name = gets.chomp.downcase
+alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => "g", "g" => "h",
+			 "h" => "j", "i" => "o", "j" => "k", "k" => "l", "l" => "m", "m" => "n", "n" => "p",
+			 "o" => "u", "p" => "q", "q" => "r", "r" => "s", "s" => "t", "t" => "v", "u" => "a",
+			 "v" => "w", "w" => "x", "x" => "y", "y" => "z", "z" => "b"
+			}
 
-	# alias_first_name = $last_name.split("")
-	# $alias_last_name = $first_name.split("")
-#definitions
-passwords = []
-string =""
-done = "done"
-#swapping
-	def change_vowel (string)
-	  vowels_a = %w[a e i o u]
-	  vowels_A = %w[A E I O U]
-
-
-	  stringarray = string.split("")
-
-	 resultarray = stringarray.map do |letter|
-	  if vowels_a.include? letter or vowels_A.include? letter
-	    "X"
-	  else
-	    letter
-	  end
-	end
-	  $string2 = resultarray.join("")
-	end
-
-# #user interface
-
-while string != done
-	puts "Spy Alias Generator"
-	puts "Please enter your name or Type [done] when finished."
-	string = gets.chomp
-	if string == done
-		puts " #{passwords.length} codenames have been made:"
-		puts passwords
-		break
-	else
-	 change_vowel(string)
-	 puts "Your no vowel codename is:"
-	 p $string2
-	 passwords << " Agent #{string} is known as: #{$string2}"
-	end
-end
-
-
-
-
-
+p alphabet
