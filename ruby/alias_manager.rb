@@ -29,17 +29,16 @@ alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => 
 # p alphabet["e"]
 output = ""
 puts "Enter a letter."
-first_name = gets.chomp
+first_name = gets.chomp.downcase
 new_last_name = first_name.split("")
 p new_last_name
 
 new_last_name.each do |x|
 	output << alphabet[x]
+	output[0] = output[0].capitalize
 end
 
-p output
-
-#puts "#{alphabet[first_name]} is the answer"
+puts "#{output} is the answer"
 
 
 
