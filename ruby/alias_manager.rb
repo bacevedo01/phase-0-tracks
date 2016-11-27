@@ -27,9 +27,20 @@ alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => 
 # p alphabet["a"]
 # p alphabet["b"]
 # p alphabet["e"]
-
+output = ""
 puts "Enter a letter."
 first_name = gets.chomp
 new_last_name = first_name.split("")
 p new_last_name
+
+new_last_name.each do |x|
+	output << alphabet[x]
+end
+
+p output
+
 #puts "#{alphabet[first_name]} is the answer"
+
+
+
+
