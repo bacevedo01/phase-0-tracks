@@ -23,11 +23,13 @@ alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => 
 			 "v" => "w", "w" => "x", "x" => "y", "y" => "z", "z" => "b"
 			}
 
-p alphabet
-p alphabet["a"]
-p alphabet["b"]
-p alphabet["e"]
+# p alphabet
+# p alphabet["a"]
+# p alphabet["b"]
+# p alphabet["e"]
 
 puts "Enter a letter."
 first_name = gets.chomp
-puts "#{alphabet[first_name]} is the answer"
+new_last_name = first_name.split("")
+p new_last_name
+#puts "#{alphabet[first_name]} is the answer"
