@@ -56,7 +56,7 @@ loop do
 		output2 << alphabet[x]
 		output2[0] = output2[0].capitalize
 	end
-	
+
 	first_name[0] = first_name[0].capitalize
 	last_name[0] = last_name[0].capitalize
 	real_name = first_name + last_name
@@ -68,6 +68,9 @@ loop do
 	new_aliases[real_name] = new_alias
 
 	puts "Your new name is #{new_alias}!"
+
+	output = ""
+	output2 = ""
 end
 
 
