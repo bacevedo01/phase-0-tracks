@@ -28,17 +28,29 @@ alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => 
 # p alphabet["b"]
 # p alphabet["e"]
 output = ""
-puts "Enter a letter."
-first_name = gets.chomp.downcase
-new_last_name = first_name.split("")
+output2 = ""
+
+puts "Alias Manager"
+puts "Enter your first name."
+	first_name = gets.chomp.downcase
+	new_last_name = first_name.split("")
 p new_last_name
+puts "Enter your last name."
+	last_name = gets.chomp.downcase
+	new_first_name = last_name.split("")
+p new_first_name
 
 new_last_name.each do |x|
 	output << alphabet[x]
 	output[0] = output[0].capitalize
 end
 
-puts "#{output} is the answer"
+new_first_name.each do |x|
+	output2 << alphabet[x]
+	output2[0] = output2[0].capitalize
+end
+
+puts "Your new name is #{output2} #{output}!"
 
 
 
