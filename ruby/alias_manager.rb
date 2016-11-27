@@ -24,3 +24,10 @@ alphabet = { "a" => "e", "b" => "c", "c" => "d", "d" => "f", "e" => "i", "f" => 
 			}
 
 p alphabet
+p alphabet["a"]
+p alphabet["b"]
+p alphabet["e"]
+
+puts "Enter a letter."
+first_name = gets.chomp
+puts "#{alphabet[first_name]} is the answer"
