@@ -42,37 +42,62 @@
 class Zombie
 	def initialize
 		puts "Rising from the grave!"
-		
 	end
 
-	def bite
-		puts "Grrrr...brains."
+	def bite(n)
+		puts "Grrrr...brains."*n
 	end
 
 	def wander(n)
 		puts "Shuffles..."*n
-		n
+	end
+
+	def chomp
+		puts "Chomp, Chomp, Chomp"
 	end
 end
 
-zombie = Zombie.new
-zombie.bite
-zombie.wander(2)
+ n = 1
+ zombie_horde = []
 
-	zombie_horde = Array.new
-	done = "done"
- 	zombie_maker = ""
- 	while zombie_maker != done 
- 		puts "Please create some zombies."
- 		puts "Type 'done' when finished."
- 		zombie_maker = gets.chomp
- 		if zombie_maker == gets.chomp
- 			puts "Creating zombie"
- 		zombie_maker = Zombie.new
- 		zombie_horde << zombie_maker
- 		elsif zombie_maker != done
- 		end
+ loop do	
+ 	zombie_horde << Zombie.new
+ 	if n == 50
+ 	break
  	end
+ 	n += 1
+ end
+
+	zombie_horde.each do |x|
+		x.bite(1)
+		x.chomp
+		x.wander(2)
+	end
+
+#p zombie_horde
+
+
+
+
+
+	# zombie_horde = []
+ # 	loop do
+	# puts "Please create some zombies. Type [done] when finished"
+	# zombie_maker = gets.chomp
+	
+	# if zombie_maker.downcase == "done"
+	# 	break
+	# end
+	# zombie_horde << zombie_maker
+	# zombie_maker = Zombie.new
+	
+	# end
+	# zombie_horde.each do |actions|
+	# (x).bite
+	# end
+
+	# p zombie_horde
+	
 
 
 
