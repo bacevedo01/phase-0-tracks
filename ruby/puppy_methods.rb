@@ -52,8 +52,8 @@ class Zombie
 		puts "Shuffles..."*n
 	end
 
-	def chomp
-		puts "Chomp, Chomp, Chomp"
+	def chomp(object)
+		puts "grabs the #{object} and chomp, chomp, chomp!"
 	end
 end
 
@@ -70,13 +70,11 @@ end
 
 	# zombie_horde.each do |x|
 	# 	x.bite(1)
-	# 	x.chomp
+	# 	x.chomp(survivor)
 	# 	x.wander(2)
 	# end
 
 #p zombie_horde
-
-
 
 
 
@@ -92,10 +90,10 @@ end
 	end
 	
 	zombie_horde.each do |x,y|
-	puts "#{x} says" 
+	puts "#{x} says " 
 	y.bite(2)
-	puts "#{x} grabs a survivor and"
-	y.chomp
+	puts "#{x} "
+	y.chomp("survivor")
 	puts "#{x} then"
 	y.wander(3)
 	end
