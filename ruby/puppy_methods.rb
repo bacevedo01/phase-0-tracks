@@ -57,22 +57,22 @@ class Zombie
 	end
 end
 
- n = 1
- zombie_horde = []
+ # n = 1
+ # zombie_horde = []
 
- loop do	
- 	zombie_horde << Zombie.new
- 	if n == 50
- 	break
- 	end
- 	n += 1
- end
+ # loop do	
+ # 	zombie_horde << Zombie.new
+ # 	if n == 50
+ # 	break
+ # 	end
+ # 	n += 1
+ # end
 
-	zombie_horde.each do |x|
-		x.bite(1)
-		x.chomp
-		x.wander(2)
-	end
+	# zombie_horde.each do |x|
+	# 	x.bite(1)
+	# 	x.chomp
+	# 	x.wander(2)
+	# end
 
 #p zombie_horde
 
@@ -80,23 +80,27 @@ end
 
 
 
-	# zombie_horde = []
- # 	loop do
-	# puts "Please create some zombies. Type [done] when finished"
-	# zombie_maker = gets.chomp
-	
-	# if zombie_maker.downcase == "done"
-	# 	break
-	# end
-	# zombie_horde << zombie_maker
-	# zombie_maker = Zombie.new
-	
-	# end
-	# zombie_horde.each do |actions|
-	# (x).bite
-	# end
+	zombie_horde = {}
+ 	loop do
+	puts "Please create some zombies. Type [done] when finished"
+	input = gets.chomp
 
-	# p zombie_horde
+	if input.downcase == "done"
+		break
+	end
+	zombie_horde[input] = Zombie.new
+	end
+	
+	zombie_horde.each do |x,y|
+	puts "#{x} says" 
+	y.bite(2)
+	puts "#{x} grabs a survivor and"
+	y.chomp
+	puts "#{x} then"
+	y.wander(3)
+	end
+
+	#p zombie_horde
 	
 
 
