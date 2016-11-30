@@ -1,7 +1,10 @@
 
 class Santa
-	def initialize
+	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
+		@gender = gender
+		@ethnicity = ethnicity
+		
 	end
 
 	def speak
@@ -13,6 +16,16 @@ class Santa
 	end
 end
 
-santa = Santa.new
-santa.speak
-santa.eat_milk_and_cookies("Peanut Butter")
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
+# santa = Santa.new
+# santa.speak
+# santa.eat_milk_and_cookies("Peanut Butter")
+
+puts santas
