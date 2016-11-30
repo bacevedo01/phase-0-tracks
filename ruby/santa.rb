@@ -8,10 +8,12 @@ class Santa
 	end
 
 	def speak
+		puts "The #{@gender} #{@ethnicity} Santa says,"
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
 
 	def eat_milk_and_cookies(cookie)
+		puts "The #{@gender} #{@ethnicity} Santa says,"
 		puts "That was a good #{cookie} cookie!" 
 	end
 end
@@ -28,4 +30,7 @@ santas << Santa.new("N/A", "N/A")
 # santa.speak
 # santa.eat_milk_and_cookies("Peanut Butter")
 
-puts santas
+santas.each do |x|
+	x.speak
+	x.eat_milk_and_cookies("chocolate chip")
+end
