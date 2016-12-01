@@ -71,15 +71,15 @@ end
 								#santa.get_made_at("Rudolph")
 								#santa.get_made_at("Donner")
 								#santa.celebrate_birthday
-genders = ["male", "female", "gender fluid", "bigender"]
-ethnicities = ["white", "black", "asian", "native american", "hispanic", "N/A"]
 
-santa = Santa.new(genders.shuffle.sample, ethnicities.shuffle.sample, rand(140))
+	genders = ["male", "female", "gender fluid", "bigender"]
+	ethnicities = ["white", "black", "asian", "native american", "hispanic", "N/A"]
 
-p santa.gender
-p santa.age
-p santa.ethnicity
-
+#santa generator
+	100.times do
+		santa = Santa.new(genders.shuffle.sample, ethnicities.shuffle.sample, rand(140))
+		puts "SantaCon welcomes a #{santa.gender}, #{santa.ethnicity} Santa that is #{santa.age} years old!"
+	end
 
 
 
