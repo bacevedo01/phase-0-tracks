@@ -19,12 +19,14 @@ class Santa
 	end
 
 	def celebrate_birthday
+		puts "Happy Birthday, Santa!"
 		@age += 1
 	end
 
 	def get_made_at (reindeer)
 		n = @ranking.index(reindeer)
 		@ranking.insert(-1, @ranking.delete_at(n))
+		p @ranking
 	end
 
 	def change_gender(new_gender)
@@ -38,26 +40,39 @@ class Santa
 	def ethnicity
 		@ethnicity
 	end
+
+	def ranking
+		@ranking
+	end
+
 end
 
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+# santas = []
+# santas << Santa.new("agender", "black")
+# santas << Santa.new("female", "Latino")
+# santas << Santa.new("bigender", "white")
+# santas << Santa.new("male", "Japanese")
+# santas << Santa.new("female", "prefer not to say")
+# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santas << Santa.new("N/A", "N/A")
 
-# santa = Santa.new
-# santa.speak
-# santa.eat_milk_and_cookies("Peanut Butter")
+santa = Santa.new("male", "white")
+# # santa.speak
+# # santa.eat_milk_and_cookies("Peanut Butter")
 
-santas.each do |x|
-	x.speak
-	x.eat_milk_and_cookies("chocolate chip")
-	puts "This Santa is #{x.age} years old!"
-end
+# santas.each do |x|
+# 	x.speak
+# 	x.eat_milk_and_cookies("chocolate chip")
+# 	puts "This Santa is #{x.age} years old!"
+# end
+
+santa.get_made_at("Rudolph")
+santa.get_made_at("Donner")
+#santa.celebrate_birthday
+p santa.age
+p santa.ethnicity
+
+
 
 
 
