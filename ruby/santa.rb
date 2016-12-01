@@ -1,5 +1,8 @@
 
 class Santa
+	attr_reader :age, :ethnicity, :ranking
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@gender = gender
@@ -29,21 +32,21 @@ class Santa
 		p @ranking
 	end
 
-	def change_gender(new_gender)
-		@gender = new_gender
-	end
+	# def change_gender(new_gender)
+	# 	@gender = new_gender
+	# end
 
-	def age
-		@age
-	end
+	# def age
+	# 	@age
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-	def ranking
-		@ranking
-	end
+	# def ranking
+	# 	@ranking
+	# end
 
 end
 
@@ -71,6 +74,8 @@ santa.get_made_at("Donner")
 #santa.celebrate_birthday
 p santa.age
 p santa.ethnicity
+santa.gender = "female"
+p santa.gender
 
 
 
