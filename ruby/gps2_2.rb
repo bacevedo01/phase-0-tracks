@@ -15,19 +15,28 @@
 # output: pring out a hash
 
 
+# Create list method
+
 
 	def create_list(grocery_string)
 		grocery_list = {}
 		grocery_array = grocery_string.split(" ")
-		grocery_array.each do |hash|
-			grocery_list[hash] = 0
+		grocery_array.each do |item|
+			grocery_list[item] = 0
 		end
 		return grocery_list
 	end
-
-p create_list("apples pears pizza juice")
+ 	
+ 	temp = create_list("apples pears pizza juice")
 
 # Method to add an item to a list
+	def add_item(grocery_list, food_item, quantity = 0)
+		grocery_list[food_item] = quantity
+		return grocery_list
+	end
+
+p add_item(temp,"burger")
+
 # input: item name and optional quantity
 # steps:
 # output:
