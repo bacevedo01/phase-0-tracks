@@ -29,7 +29,7 @@
  	
  	temp = create_list("apples pears pizza juice")
 
-# Method to add an item to a list
+# Method to add an item and optional quanity to a list
 	def add_item(grocery_list, food_item, quantity = 0)
 		grocery_list[food_item] = quantity
 		return grocery_list
@@ -37,9 +37,14 @@
 
 p add_item(temp,"burger")
 
-# input: item name and optional quantity
-# steps:
-# output:
+
+	def remove_item(grocery_list,food_item)
+		grocery_list.delete(food_item)
+		return grocery_list
+	end
+p remove_item(temp, "pizza")
+
+
 
 # Method to remove an item from the list
 # input:
