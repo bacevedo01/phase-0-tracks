@@ -20,7 +20,7 @@
 
 def create_list(grocery_string)
 	grocery_list = {}
-	grocery_array = grocery_string.split(",")
+	grocery_array = grocery_string.split(" ")
 	grocery_array.each do |item|
 		grocery_list[item] = 0
 	end
@@ -76,8 +76,30 @@ update_item(temp, "Ice Cream", 1)
 
 print_list(temp)
 
-# input:
-# steps:
-# output:
+# What did you learn about pseudocode from working on this challenge?
+	#The organization of the pseudocode was very helpful in writing the actual method.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+	#Arrays are good for lists with one argument. Hashes are better for updating values without 
+	#changing the key.
+
+# What does a method return?
+	#It returns whatever output of the code is inside the method.
+
+# What kind of things can you pass into methods as arguments?
+	#Hashes, intergers, strings, equations, values, variables, etc.
+
+# How can you pass information between methods?
+	#Returning the output and putting it in a variable outside of the method then passing that 
+	#variable to the next method. 
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+	#Passing information between methods. How to call on methods on a variable that is being 
+	#continuiously updated. Solidied use of hashes. Passing information from an array to a hash.
+	#Solidied use of default values.
+
+#Things to improve.
+	#Use of default values in arguments.
+
 
 
