@@ -1,30 +1,23 @@
 class TodoList
-
-	def initialize(list_item)
-		@get_items = list_item.split(", ")
+	def initialize(task)
+		@list = []
+		@list = task
 	end
 
-	def add_item(list_item)
-	@todo_list << list_item
+	def get_items()
+		@list 
 	end
 
-	def delete_item(list_item)
-	@todo_list.delete(list_item)
+	def add_item(item)
+		@list << item
 	end
 
-	def get_items
-	@todo_list
+	def delete_item(input)
+		@list.delete(input)
 	end
 
+	def get_item(int)
+		@list[int]
+	end
 end
-
-# list = TodoList.new("do the dishes, mow the lawn")
-
-# list.get_items
-# list.add_item("mop")
-# list.delete_item("do the dishes")
-
-# puts "Here is the list of things to do #{list.get_items}"
-
-
 
