@@ -6,3 +6,15 @@
 #Player can recieve negative feedback for a wrong guess and loses a guess.
 #Player can recieve a congratulatory message for correctly guessing the word.
 #Player can recieve a negative message for running out of guesses.
+
+
+class Game
+	attr_accessor :word
+	attr_accessor :guesses
+
+	def initialize(word)
+		@word = word
+		@guesses = word.length
+	end
+	
+end
