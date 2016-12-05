@@ -26,10 +26,32 @@ class Game
 				puts "YES!"
 			else
 				puts "NO!"
-				@guesses -= 1
 			end
 
 			@last_guess = letter
 	end
 
 end
+
+
+#User Interface
+puts "Welcome to the Word Game!"
+puts "Player 1, type a word to be guessed."
+word = gets.chomp
+game = Game.new(word)
+
+i = game.guesses
+loop do
+	puts "Player 2, guess a letter in the word."
+	letter = gets.chomp
+	game.guess(letter)
+	i -= 1
+	if i == 0
+		break
+	end
+end
+
+
+
+
+
