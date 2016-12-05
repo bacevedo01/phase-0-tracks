@@ -40,6 +40,10 @@ class Dancer
 		@card.shift
 	end
 
+	def leap
+		@leap = "*leaps in air*"
+	end
+
 end
 	
 # dancer = Dancer.new("Misty", 33)
