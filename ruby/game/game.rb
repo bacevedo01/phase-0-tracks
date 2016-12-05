@@ -10,46 +10,57 @@
 
 class Game
 	attr_accessor :word
-	attr_accessor :guesses
+	attr_accessor :answer
+	attr_accessor :guess_count
+	attr_accessor :final_answer
 
 	def initialize(word)
 		@word = word
-		@guesses = word.length
-		@last_guess = "y"
+		@answer = word.split("").map(&:downcase)
+		@guess_count = @answer.length
+		@final_answer = @word.gsub(/[a-zA-Z]/, "_").split("")
 	end
 
-	def guess(letter)
+	def guess
+		loop do
+		  puts "The answer is: #{@final_answer.join}"
+		  puts "You have #{@guess_count} guesses remaining."
+		  puts "Guess a letter"
+		  @guess = gets.downcase.chomp
 
-			if letter == @last_guess
-				puts "You've tried that before."
-			elsif @word.include? letter
-				puts "YES!"
-			else
-				puts "NO!"
-			end
+		  if @answer.include?(@guess)
+		    @letter_index = @answer.each.find_index(@guess)
+		    @answer[@letter_index] = ""
+		    @final_answer[@letter_index] = @guess
+		    @solution = @final_answer.join
+		  else
+		    puts "Sorry, please try again."
+		    @guess_count -= 1
+		  end
 
-			@last_guess = letter
+		  if @guess_count == 0
+		    puts "You lose."
+		    break
+		  end
+
+		  if @solution == @word.downcase
+		    puts "You win!"
+		    break
+		  end
+
+		end
 	end
-
 end
 
 
 #User Interface
+
 puts "Welcome to the Word Game!"
 puts "Player 1, type a word to be guessed."
-word = gets.chomp
+word = gets.downcase.chomp
 game = Game.new(word)
 
-i = game.guesses
-loop do
-	puts "Player 2, guess a letter in the word."
-	letter = gets.chomp
-	game.guess(letter)
-	i -= 1
-	if i == 0
-		break
-	end
-end
+game.guess
 
 
 
