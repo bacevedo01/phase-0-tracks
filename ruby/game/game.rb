@@ -15,6 +15,21 @@ class Game
 	def initialize(word)
 		@word = word
 		@guesses = word.length
+		@last_guess = "y"
 	end
-	
+
+	def guess(letter)
+
+			if letter == @last_guess
+				puts "You've tried that before."
+			elsif @word.include? letter
+				puts "YES!"
+			else
+				puts "NO!"
+				@guesses -= 1
+			end
+
+			@last_guess = letter
+	end
+
 end
