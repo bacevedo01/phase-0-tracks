@@ -8,22 +8,23 @@ describe Game do
   end
 
   it "can store the players amount of guesses" do
-  	expect(game.guesses).to eq 4
+  	expect(game.guess_count).to eq 4
   end
 
-  it "can record guesses that are correct" do
-  	game.guess("o")
-  	expect(game.guesses).to eq 4
+  it "can parse the answer" do
+  	expect(game.answer).to eq ["w", "o", "r", "d"]
   end
 
-   it "can record guesses that are incorrect" do
-  	game.guess("x")
-  	expect(game.guesses).to eq 3
+  it "can record the right answer" do
+  	game.guess
+  	expect(game.letter_index).to eq 0
   end
+  # Changed line 30 from get.downcase.chomp to "w"
 
-  	it "can record multiple guesses of the same letter" do
-  		game.guess('y')
-  		expect(game.guesses).to eq 4
-  end
+  # it "can record a wrong answer" do
+  # 	game.guess
+  # 	expect(game.letter_index).to eq nil
+  # end
+  # #Changed line 30 from get.downcase.chomp to "x"
 
 end

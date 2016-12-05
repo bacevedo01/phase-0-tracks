@@ -13,6 +13,8 @@ class Game
 	attr_accessor :answer
 	attr_accessor :guess_count
 	attr_accessor :final_answer
+	attr_accessor :letter_index
+	attr_accessor :result
 
 	def initialize(word)
 		@word = word
@@ -26,7 +28,8 @@ class Game
 		  puts "The answer is: #{@final_answer.join}"
 		  puts "You have #{@guess_count} guesses remaining."
 		  puts "Guess a letter"
-		  @guess = gets.downcase.chomp
+		  # @guess = "w"
+		  # @guess = "x"
 
 		  if @answer.include?(@guess)
 		    @letter_index = @answer.each.find_index(@guess)
@@ -55,12 +58,12 @@ end
 
 #User Interface
 
-puts "Welcome to the Word Game!"
-puts "Player 1, type a word to be guessed."
-word = gets.downcase.chomp
-game = Game.new(word)
+# puts "Welcome to the Word Game!"
+# puts "Player 1, type a word to be guessed."
+# word = gets.downcase.chomp
+# game = Game.new(word)
 
-game.guess
+# game.guess
 
 
 
