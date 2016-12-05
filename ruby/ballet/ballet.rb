@@ -18,6 +18,14 @@ class Dancer
 		return @age
 	end
 
+	def pirouette
+		@pirouette = "*twirls*"
+	end
+
+	def bow
+		@bow = "*bows*"
+	end
+
 end
 	
 
