@@ -7,6 +7,8 @@
 #
 #
 require_relative 'state_data'
+#require_relative looks for file relative to the file making the call.
+#require looks for the file relative to the working directory in terminal.
 
 class VirusPredictor
 
@@ -85,5 +87,4 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+
