@@ -7,8 +7,11 @@ function reverseString(str) {
     for (var i = str.length - 1; i >= 0; i--) { 
         reverseword += str[i]; 
     }
+    return reverseword
     console.log(reverseword); 
-
 }
- 
-reverseString('hello world');
+
+var n = 1
+if (n == 1) {
+    console.log(reverseString('hello world'));
+}
