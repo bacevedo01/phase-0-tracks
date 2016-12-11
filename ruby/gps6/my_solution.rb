@@ -5,72 +5,62 @@
 
 # EXPLANATION OF require_relative
 #
-#
+
+
 require_relative 'state_data'
 #require_relative looks for file relative to the file making the call.
 #require looks for the file relative to the working directory in terminal.
 
 class VirusPredictor
 
-  #Initializes an instance of the class VirusPredictor with state_of_origin, population_density and population
-  #as parameters.
+  # initialize initializes an instance of the class VirusPredictor with state_of_origin, population_density and population
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
-  #Calls two other methods (predicted_deaths and speed_of_spread) and runs them.
+  # Publically displays the report
   def virus_effects
-    predicted_deaths
-    speed_of_spread
+    display_report
   end
 
+  # private secures proprietary information within the object instance
   private
 
-  #Looks at population_density and calculates number of death and prints that output.
-  def predicted_deaths
-    # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
-
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
+  # display_report prints the output of predicted_deaths and speed_of_spread
+  def display_report
+    print "#{@state} will lose #{predicted_deaths} people in this outbreak"
+    print " and will spread across the state in #{speed_of_spread} months.\n\n"
   end
 
-  #Looks at population_density and calculates the speed of spread of the disease.
-  #it prints an output of the results.
+  # predicted_deaths looks at population_density and calculates number of death and prints that output.
+  def predicted_deaths
+    # predicted deaths is solely based on population density
+    STATE_FORMULA.each do |state_size, calculation|
+      if @population_density >= calculation[:pop_density]
+        return number_of_deaths = (@population * calculation[:deaths]).floor
+      end
+    end
+    number_of_deaths = (@population * 0.05).floor
+  end
+
+  # speed_of_spread looks at population_density and calculates the speed of spread of the disease.
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
+    STATE_FORMULA.each do |state_size, calculation|
+      if @population_density >= calculation[:pop_density]
+        return speed += calculation[:speed]
+      end
     end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
-
+    speed += 2.5
   end
 
 end
+
 
 #=======================================================================
 
@@ -97,4 +87,14 @@ end
 
 #=======================================================================
 # Reflection Section
-
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+#   All the state names keys are strings, and all the nested keys are symbols.
+# What does require_relative do? How is it different from require?
+#   require_relative looks for file relative to the file making the call.
+#   require looks for the file relative to the working directory in terminal.
+# What are some ways to iterate through a hash?
+#   .each / .select
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+#   It was redundant to pass instance variables as arguments to instance methods because those variables were already available
+# What concept did you most solidify in this challenge?
+#   working with hashes.

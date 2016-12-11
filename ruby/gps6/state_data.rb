@@ -1,6 +1,12 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+STATE_FORMULA = {
+  "XLarge State" => {pop_density: 200, deaths: 0.4, speed: 0.5},
+  "Large State"  => {pop_density: 150, deaths: 0.3, speed: 1},
+  "Medium State" => {pop_density: 100, deaths: 0.2, speed: 1.5},
+  "Small State"  => {pop_density: 50, deaths: 0.1, speed: 2}
+}
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
@@ -55,5 +61,3 @@ STATE_DATA = {
   "Wisconsin" => {population_density: 105.2, population: 5726398},
   "Wyoming" => {population_density: 5.851, population: 576412}
 }
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
