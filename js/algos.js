@@ -45,5 +45,25 @@ function compare_object(object1, object2) {
 
 compare_object(steven, tamir)
 
+//Release 2
+
+var rand =Math.floor(Math.random()*10 + 1);
+
+console.log(rand)
+
+function makeid()
+{
+		var rand =Math.floor(Math.random()*10 + 1);
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < rand; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    console.log(text);
+}
+
+makeid()
+
 
 
