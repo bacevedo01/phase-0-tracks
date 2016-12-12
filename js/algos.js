@@ -23,9 +23,9 @@ for(var i=0; i < input_array.length; i++){
 var words = ['poop', 'poopy', 'poo'];
 var words2 = ['dog', 'elephant', 'bear'];
 
-longest_element(words)
-longest_element(words2)
-longest_element(["run","runs","running"])
+longest_element(words);
+longest_element(words2);
+longest_element(["run","runs","running"]);
 
 // Release 1
 function person(name, age) {
@@ -33,8 +33,17 @@ function person(name, age) {
 	this.age = age;
 }
 
-var steven = new person("Steven", 54)
-var tamir = new person("Tamir", 54)
+var steven = new person("Steven", 54);
+var tamir = new person("Tamir", 54);
+console.log (steven);
+console.log (tamir);
 
-console.log (steven)
-console.log (tamir)
+function compare_object(object1, object2) {
+	console.log(object1.name == object2.name);
+	console.log(object1.age == object2.age);
+}
+
+compare_object(steven, tamir)
+
+
+
