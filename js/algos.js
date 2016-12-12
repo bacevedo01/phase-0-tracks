@@ -6,7 +6,7 @@
 // Find the length of each element in the array.
 // Sort the array and return the longest element (which should be in the 0 position)
 
-
+// Release 0
 function longest_element(input_array) {
 var length = 0;
 var longest;
@@ -26,3 +26,15 @@ var words2 = ['dog', 'elephant', 'bear'];
 longest_element(words)
 longest_element(words2)
 longest_element(["run","runs","running"])
+
+// Release 1
+function person(name, age) {
+	this.name = name;
+	this.age = age;
+}
+
+var steven = new person("Steven", 54)
+var tamir = new person("Tamir", 54)
+
+console.log (steven)
+console.log (tamir)
