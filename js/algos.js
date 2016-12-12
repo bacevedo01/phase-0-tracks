@@ -17,6 +17,7 @@ for(var i=0; i < input_array.length; i++){
         longest = input_array[i];
     }      
 	} 
+	console.log("The longest element is")
 	console.log(longest);
 }
 
@@ -51,6 +52,8 @@ var rand =Math.floor(Math.random()*10 + 1);
 
 console.log(rand)
 
+var sentence = []
+
 function makeid()
 {
 		var rand =Math.floor(Math.random()*10 + 1);
@@ -59,11 +62,24 @@ function makeid()
 
     for( var i=0; i < rand; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-
+    console.log("The word is")
     console.log(text);
+    sentence.push(text);
 }
 
 makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+makeid()
+
+longest_element(sentence)
 
 
 
