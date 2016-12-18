@@ -1,0 +1,46 @@
+
+1. Display the information in one table (either table is fine)
+sqlite> SELECT * FROM equipment;
+1|Zoom H4N|2234-34-1234|1|1
+2|Canon 6D|3234-34-1234|3|2
+3|1/4 Cable|n/a|12|3
+4|1/8 Cable|n/a|6|3
+5|Wacom Table 4|5234-34-1234|10|4
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+sqlite> UPDATE equipment SET quantity=4 WHERE name="1/8 Cable";
+sqlite> SELECT * FROM equipment;
+1|Zoom H4N|2234-34-1234|1|1
+2|Canon 6D|3234-34-1234|3|2
+3|1/4 Cable|n/a|12|3
+4|1/8 Cable|n/a|4|3
+5|Wacom Table 4|5234-34-1234|10|4
+
+3. Display the information in both tables using one query.
+sqlite> SELECT * FROM equipment, usage WHERE equipment.use = usage.id; 
+1|Zoom H4N|2234-34-1234|1|1|1|Audio
+2|Canon 6D|3234-34-1234|3|2|2|Video
+3|1/4 Cable|n/a|12|3|3|Assessories
+4|1/8 Cable|n/a|4|3|3|Assessories
+5|Wacom Table 4|5234-34-1234|10|4|4|Visual Arts
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+sqlite> SELECT equipment.name, equipment.quantity, usage.name FROM equipment JOIN usage ON equipment.use = usage.id;
+Zoom H4N|1|Audio
+Canon 6D|3|Video
+1/4 Cable|12|Assessories
+1/8 Cable|4|Assessories
+Wacom Table 4|10|Visual Arts
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+Zoom H4N|1|Audio
+Canon 6D|3|Video
+1/4 Cable|12|Assessories
+1/8 Cable|4|Assessories
+Wacom Table 4|10|Visual Arts
+sqlite> DELETE FROM equipment WHERE use=4;
+sqlite> SELECT * FROM equipment;
+1|Zoom H4N|2234-34-1234|1|1
+2|Canon 6D|3234-34-1234|3|2
+3|1/4 Cable|n/a|12|3
+4|1/8 Cable|n/a|4|3
