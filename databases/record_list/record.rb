@@ -38,9 +38,11 @@ end
 #USER INTERFACE
 
 loop do 
+	puts "===================="
 	puts "MY RECORD COLLECTION MK 1.0"
 	puts "WHAT WOULD YOU LIKE TO DO?"
 	puts "[VIEW], [ADD], [DELETE] [END]"
+	puts "===================="
 	input = gets.chomp.downcase
 
 	case input
@@ -55,15 +57,32 @@ loop do
 			album = gets.chomp
 			puts "What is the speed of the record[33 or 45] RPM?"
 			speed = gets.chomp.to_i
-			add_record($db, artist, album, speed)
+			puts "COMMIT #{album} by #{artist} at #{speed} RPM to collection? [Y/N]"
+			answer = gets.chomp.downcase
+				case answer
+					when 'y'
+						add_record($db, artist, album, speed)
+						puts "===================="
+						puts "Adding record to collection."
+						puts "===================="
+					else
+						puts "===================="
+						puts "Canceling entry."
+						puts "===================="
+				end
 		when 'delete'
 			puts "What is the title of the album to be deleted?"
 			album = gets.chomp
 			delete_record(album)
+			puts "===================="
+			puts "Deleting entry."
+			puts "===================="
 		when 'end'
 			break
 	 	else
+	 		puts "===================="
 			puts "Please enter a valid entry."
+			puts "===================="
 	end
 end
 
