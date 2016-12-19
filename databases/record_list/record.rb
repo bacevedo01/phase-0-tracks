@@ -14,15 +14,15 @@ create_table_cmd = <<-SQL
 SQL
 
 $db.execute(create_table_cmd)
-#db.execute("INSERT INTO records (artist, album, speed) VALUES ('The Beatles', 'White Album', 33)")
+# $db.execute("INSERT INTO records (artist, album, speed) VALUES ('The Beatles', 'White Album', 33)")
 
 
 def add_record(db, artist, album, speed)
   $db.execute("INSERT INTO records (artist, album, speed) VALUES (?, ?, ?)", [artist, album, speed])
 end
 
-def delete_record(db, album)
-	$db.execute("DELETE FROM records WHERE album=#{record[album]}")
+def delete_record(album)
+	$db.execute("DELETE FROM records WHERE album=(?)", [album])
 end
 
 def view_collection
@@ -34,5 +34,6 @@ def view_collection
 end
 
 view_collection
-delect_record($db,"White Album")
-view_collection
+# delete_record("Red Blood Cells")
+# add_record($db, "The White Stripes", "Red Blood Cells", 33)
+# view_collection
