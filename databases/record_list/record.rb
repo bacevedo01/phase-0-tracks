@@ -29,8 +29,8 @@ end
 
 def view_collection
 	records = $db.execute("SELECT * FROM records")
-	records.each do |record|
 	puts "Your collection of records is:"
+	records.each do |record|
 	puts "#{record['album']} by #{record['artist']} at #{record['speed']} RPM."
 	end
 end
@@ -55,6 +55,7 @@ loop do
 			album = gets.chomp
 			puts "What is the speed of the record[33 or 45] RPM?"
 			speed = gets.chomp.to_i
+			add_record($db, artist, album, speed)
 		when 'delete'
 			puts "What is the title of the album to be deleted?"
 			album = gets.chomp
