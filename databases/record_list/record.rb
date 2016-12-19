@@ -74,6 +74,9 @@ loop do
 			puts "What is the title of the album to be deleted?"
 			album = gets.chomp
 			delete_record(album)
+			puts "===================="
+			puts "Deleting entry."
+			puts "===================="
 		when 'end'
 			break
 	 	else
