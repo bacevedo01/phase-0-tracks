@@ -29,7 +29,7 @@ end
 
 def view_collection
 	records = $db.execute("SELECT * FROM records")
-	puts "Your collection of records is:"
+	puts "YOUR COLLECTION OF RECORDS ARE:"
 	records.each do |record|
 	puts "#{record['album']} by #{record['artist']} at #{record['speed']} RPM."
 	end
@@ -51,37 +51,46 @@ loop do
 			view_collection
 			puts "===================="
 		when 'add'
-			puts "What is the artist?"
+			puts "WHAT IS THE ARTIST?"
 			artist = gets.chomp
-			puts "What is the title of the album?"
+			puts "WHAT IS THE ALBUM NAME?"
 			album = gets.chomp
-			puts "What is the speed of the record[33 or 45] RPM?"
+			puts "WHAT IS THE SPEED OF THE RECORD [33 or 45] RPM?"
 			speed = gets.chomp.to_i
-			puts "COMMIT #{album} by #{artist} at #{speed} RPM to collection? [Y/N]"
+			puts "COMMIT #{album} by #{artist} at #{speed} RPM to COLLECTION? [Y/N]"
 			answer = gets.chomp.downcase
 				case answer
 					when 'y'
 						add_record($db, artist, album, speed)
 						puts "===================="
-						puts "Adding record to collection."
+						puts "ADDING RECORD TO COLLECTION."
 						puts "===================="
 					else
 						puts "===================="
-						puts "Canceling entry."
+						puts "CANCELING ENTRY."
 						puts "===================="
 				end
 		when 'delete'
-			puts "What is the title of the album to be deleted?"
+			puts "WHAT IS THE NAME OF THE ALBUM TO BE DELETED?"
 			album = gets.chomp
-			delete_record(album)
-			puts "===================="
-			puts "Deleting entry."
-			puts "===================="
+			puts "DELETE #{album} from COLLECTION? [Y/N]"
+			answer = gets.chomp.downcase
+				case answer
+					when 'y'
+						delete_record(album)
+						puts "===================="
+						puts "DELETING ALBUM"
+						puts "===================="
+					else
+						puts "===================="
+						puts "CANCELING ENTRY."
+						puts "===================="
+				end
 		when 'end'
 			break
 	 	else
 	 		puts "===================="
-			puts "Please enter a valid entry."
+			puts "PLEASE MAKE A VALID ENTRY."
 			puts "===================="
 	end
 end
