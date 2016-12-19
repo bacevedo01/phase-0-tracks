@@ -1,6 +1,6 @@
 
 
-#INITALIZE COLLECTION
+#INITALIZE RECORD COLLECTION
 require 'sqlite3'
 
 $db = SQLite3::Database.new("records.db")
@@ -16,7 +16,7 @@ create_table_cmd = <<-SQL
 SQL
 
 $db.execute(create_table_cmd)
-# $db.execute("INSERT INTO records (artist, album, speed) VALUES ('The Beatles', 'White Album', 33)")
+
 
 #METHODS FOR COLLECTION
 def add_record(db, artist, album, speed)
@@ -59,6 +59,7 @@ loop do
 		when 'delete'
 			puts "What is the title of the album to be deleted?"
 			album = gets.chomp
+			delete_record(album)
 		when 'end'
 			break
 	 	else
@@ -66,6 +67,4 @@ loop do
 	end
 end
 
-# delete_record("Red Blood Cells")
-# add_record($db, "The White Stripes", "Red Blood Cells", 33)
-# view_collection
+
