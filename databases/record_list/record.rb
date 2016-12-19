@@ -1,4 +1,6 @@
 
+
+#INITALIZE COLLECTION
 require 'sqlite3'
 
 $db = SQLite3::Database.new("records.db")
@@ -16,7 +18,7 @@ SQL
 $db.execute(create_table_cmd)
 # $db.execute("INSERT INTO records (artist, album, speed) VALUES ('The Beatles', 'White Album', 33)")
 
-
+#METHODS FOR COLLECTION
 def add_record(db, artist, album, speed)
   $db.execute("INSERT INTO records (artist, album, speed) VALUES (?, ?, ?)", [artist, album, speed])
 end
@@ -33,7 +35,36 @@ def view_collection
 	end
 end
 
-view_collection
+#USER INTERFACE
+
+loop do 
+	puts "MY RECORD COLLECTION MK 1.0"
+	puts "WHAT WOULD YOU LIKE TO DO?"
+	puts "[VIEW], [ADD], [DELETE] [END]"
+	input = gets.chomp.downcase
+
+	case input
+		when 'view'
+			puts "===================="
+			view_collection
+			puts "===================="
+		when 'add'
+			puts "What is the artist?"
+			artist = gets.chomp
+			puts "What is the title of the album?"
+			album = gets.chomp
+			puts "What is the speed of the record[33 or 45] RPM?"
+			speed = gets.chomp.to_i
+		when 'delete'
+			puts "What is the title of the album to be deleted?"
+			album = gets.chomp
+		when 'end'
+			break
+	 	else
+			puts "Please enter a valid entry."
+	end
+end
+
 # delete_record("Red Blood Cells")
 # add_record($db, "The White Stripes", "Red Blood Cells", 33)
 # view_collection
